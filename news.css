@@ -1,0 +1,31 @@
+body {
+    font-family: Verdana, Sans-Serif;
+}
+.feed {
+    border: 1px solid blue;
+    float: left;
+    margin: 1px;
+    width: 400px;
+}
+a {
+    font-size: 7pt;
+    text-decoration: none;
+}
+a:hover {
+    background-color: #DDD;
+}
+a:visited {
+    color: #EEE;
+}
+a.title {
+    font-weight: bold;
+    color: black;
+    margin-bottom: 3px;
+}
+.mini {
+    font-size: 7pt;
+    color: gray;
+}
+.invisible {
+    display: none;
+}

@@ -1,6 +1,10 @@
 <?php
 require 'magpierss/rss_fetch.inc';
 
+$maxlen = 60;
+$maxage = 31*60*24;
+$maxcount = 10;
+
 function age($t) {
     $age = time()-$t;
     $age /= 60;
@@ -13,7 +17,22 @@ function age($t) {
         $age = $d = round($age/24, 0);
         $h = $age % 24;
     }
-    return ($d?$d.'d ':'').($h.'h ').$m.'m';
+    return 
+        ($d ? $d.'d ' : '' ).
+        ($h . 'h ').
+        ($m . 'm' );
+}
+
+function plainage($t) {
+    return (time()-$t)/60;
+}
+
+function ageToOpacity($t) {
+    if (empty($t))
+        return 1;
+
+    $age = time() - $t;
+    return 1-min(0.8, $age / 60 / 60 / 24);
 }
 
 $f = file('feeds.txt');
@@ -22,44 +41,21 @@ $rss = array();
 
 foreach ($f as $l) {
     $l = trim($l);
-    $rss[] = fetch_rss($l);
+    $r = fetch_rss($l);
+    foreach ($r->items as $id => $i) { 
+        if (strlen($i['title']) > $maxlen)
+            $r->items[$id]['title'] = substr($i['title'], 0, $maxlen).'...';
+
+        if (isset($i['date_timestamp']) && plainage($i['date_timestamp']) > $maxage)
+            unset($r->items[$id]);
+    }
+
+    if (count($r->items) > $maxcount)
+        $r->items = array_slice($r->items, 0, $maxcount);
+
+    if (count($r->items))
+        $rss[] = $r;
 }
 
-?><html>
-    <head>
-        <style type='text/css'>
-        .feed {
-            border: 1px solid blue;
-            float: left;
-            margin: 1px;
-            width: 300px;
-        }
-        a {
-            font-size: 7pt;
-            text-decoration: none;
-        }
-        a:hover {
-            background-color: #DDD;
-        }
-        a.title {
-            font-weight: bold;
-        }
-        </style>
-    </head>
-    <body>
-<?php   foreach ($rss as $r): ?>
-<div class='feed'>
-<a class='title' href='<?= $r->link ?>'><?= $r->channel['title'] ?></a><br />
-<?php   foreach ($r->items as $i): ?>
-<?= isset($i['date_timestamp']) ? age($i['date_timestamp']).' ago<br />' : '' ?>
-<a class='link' href='<?= $i['link']?>'><?= $i['title'] ?></a><br />
-<?= $i['pubdate']; ?><hr />
-<!--
-<?= $i['description']; ?><hr />
-<?= $i['summary']; ?>
--->
-<?php   endforeach; ?>
-</div>
-<?php   endforeach; ?>
-    </body>
-</html>
+include "template.php";
+?>
