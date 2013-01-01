@@ -1,31 +1,61 @@
 body {
     font-family: Verdana, Sans-Serif;
+    margin: 0;
+    padding: 0;
 }
+
 .feed {
     border: 1px solid blue;
     float: left;
     margin: 1px;
-    width: 400px;
+    width: 395px;
+    white-space: nowrap;
+    overflow: hidden;
 }
+
 a {
     font-size: 7pt;
     text-decoration: none;
 }
+
 a:hover {
+    opacity: 1 !important;
     background-color: #DDD;
+    color: blue !important;
 }
+
 a:visited {
     color: #EEE;
 }
+
 a.title {
     font-weight: bold;
     color: black;
     margin-bottom: 3px;
 }
+
+a.link {
+    position: relative;
+    cursor: pointer;
+    width: 100px; 
+    padding: 0px;
+    margin: 0px;
+}
+
 .mini {
     font-size: 7pt;
     color: gray;
 }
+
 .invisible {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
     display: none;
+}
+
+#news {
+    border: 1px solid red;
+    width: 95%;
+    clear: both;
 }

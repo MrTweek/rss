@@ -1,23 +1,36 @@
+<?php 
+$cd = 0;
+?>
 <html>
     <head>
         <title>News aggregation</title>
         <link rel='stylesheet' type='text/css' href='news.css' />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
+        <script language="JavaScript" src="http://www.bosrup.com/web/overlib/overlib.js"></script>
+        <script>
+            overlib_pagedefaults(WIDTH, 500, FGCOLOR, '#ffffcc', BGCOLOR,'#668866');
+        </script>
     </head>
     <body>
+        <div id="overDiv" style="position:absolute; visibility:hidden; z-index:1000;"></div>
 <?php   foreach ($rss as $r): ?>
     <div class='feed'>
-    <a class='title' href='<?= $r->link ?>'><?= $r->channel['title'] ?></a><br />
-    <?php foreach ($r->items as $i): ?>
+        <a class='title' href='<?= $r->channel['link'] ?>'><?= $r->channel['title'] ?></a><br />
+    <?php foreach ($r->items as $i): $id++; ?>
+        <a 
+            class='link' 
+            style='opacity: <?= ageToOpacity($i['date_timestamp']) ?>' 
+            href='<?= $i['link']?>' 
+            onmouseover="overlib($('#n<?= $id ?>').html())"
+            onmouseout='nd();'
+            >
         <?php if (isset($i['date_timestamp'])): ?>
-            <span class='mini'>
-                [<?= age($i['date_timestamp']) ?>]
-            </span>
+            <span class='mini'>[<?= age($i['date_timestamp']) ?>]</span>
         <?php endif; ?>
-        <a class='link' style='opacity: <?= ageToOpacity($i['date_timestamp']) ?>' href='<?= $i['link']?>'><?= $i['title'] ?></a><br />
-        <div class='invisible'>
-            <?= $i['pubdate']; ?><br />
-            <?= $i['description']; ?><br />
-            <?= $i['summary']; ?>
+            <?= $i['title'] ?></a><br />
+        <div id='n<?= $id ?>' class='invisible'>
+            <b><?= $i['pubdate']; ?></b><br />
+            <?= $i['description']; ?>
         </div>
     <?php   endforeach; ?>
     </div>
