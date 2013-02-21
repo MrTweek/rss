@@ -14,6 +14,9 @@ $cd = 0;
     <body>
         <div id="overDiv" style="position:absolute; visibility:hidden; z-index:1000;"></div>
 <?php   foreach ($rss as $r): ?>
+<?php       if ($r == 'clear'): ?>
+    <div class='clearer'></div> 
+<?php       continue; endif; ?>
     <div class='feed'>
         <a class='title' href='<?= $r->channel['link'] ?>'><?= $r->channel['title'] ?></a><br />
     <?php foreach ($r->items as $i): $id++; ?>
@@ -35,5 +38,6 @@ $cd = 0;
     <?php   endforeach; ?>
     </div>
     <?php   endforeach; ?>
+	<img class='graph' src='https://www.google.com/finance/chart?num=10&hl=en&safe=off&client=opera&hs=HEu&tbo=d&channel=suggest&q=CURRENCY:AUDEUR&tkr=1&p=3M&chst=vkc&chs=1587x105&chsc=1' alt='AUDEUR' />
     </body>
 </html>

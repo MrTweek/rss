@@ -2,15 +2,26 @@ body {
     font-family: Verdana, Sans-Serif;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 .feed {
-    border: 1px solid blue;
+    border: 1px solid #DDF;
     float: left;
-    margin: 1px;
+    margin: 0 1px 1px 0;
     width: 395px;
     white-space: nowrap;
     overflow: hidden;
+	border-radius: 3px;
+}
+
+.feed:hover a {
+	opacity: 1 !important;
+}
+
+.feed:hover {
+	border: 1px solid blue;
+	background-color: #EEE;
 }
 
 a {
@@ -58,4 +69,17 @@ a.link {
     border: 1px solid red;
     width: 95%;
     clear: both;
+}
+
+.clearer {
+    clear: both;
+    margin: 1px 0 1px 0;
+    border-top: 1px solid green;
+    width: 100%;
+}
+
+.graph {
+	border: 1px solid blue;
+	padding: 1px;
+    margin: 0 1px 1px 0;
 }

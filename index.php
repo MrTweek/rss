@@ -2,7 +2,7 @@
 require 'magpierss/rss_fetch.inc';
 
 $maxlen = 600;
-$maxage = 31*60*24;
+$maxage = 31*60*24*12;
 $maxcount = 10;
 
 function age($t) {
@@ -10,7 +10,7 @@ function age($t) {
 
     $tokens = array (
         31536000 => 'y',
-        2592000 => 'm',
+        2592000 => 'M',
         604800 => 'w',
         86400 => 'd',
         3600 => 'h',
@@ -52,18 +52,16 @@ $rss = array();
 
 foreach ($f as $l) {
     $l = trim($l);
-    $r = fetch_rss($l);
-
-    foreach ($r->items as $id => $i) {
-        if (isset($i['date_timestamp']) && plainage($i['date_timestamp']) > $maxage)
-            unset($r->items[$id]);
+    if (empty($l)) {
+        $rss[] = 'clear';
     }
-
+    $r = fetch_rss($l);
     if (count($r->items) > $maxcount)
         $r->items = array_slice($r->items, 0, $maxcount);
 
-    if (count($r->items))
+    if (count($r->items)) {
         $rss[] = $r;
+    }
 }
 
 
