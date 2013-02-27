@@ -38,6 +38,9 @@ $cd = 0;
     <?php   endforeach; ?>
     </div>
     <?php   endforeach; ?>
-	<img class='graph' src='https://www.google.com/finance/chart?num=10&hl=en&safe=off&client=opera&hs=HEu&tbo=d&channel=suggest&q=CURRENCY:AUDEUR&tkr=1&p=3M&chst=vkc&chs=1587x105&chsc=1' alt='AUDEUR' />
+	<?php if (file_exists('custom.html')): ?>
+		<?= file_get_contents('custom.html') ?>
+	<?php endif; ?>
+		<div id='footer'>&copy;2013 <a href='http://flupps.net/'>Philipp Gruber</a></div>
     </body>
 </html>

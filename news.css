@@ -25,28 +25,28 @@ body {
 	background-color: #EEE;
 }
 
-a {
+.feed a {
     font-size: 7pt;
     text-decoration: none;
 }
 
-a:hover {
+.feed a:hover {
     opacity: 1 !important;
     background-color: #DDD;
     color: blue !important;
 }
 
-a:visited {
+.feed a:visited {
     color: #EEE;
 }
 
-a.title {
+.feed a.title {
     font-weight: bold;
     color: black;
     margin-bottom: 3px;
 }
 
-a.link {
+.feed a.link {
     position: relative;
     cursor: pointer;
     width: 100px; 
@@ -83,4 +83,26 @@ a.link {
 	border: 1px solid blue;
 	padding: 1px;
     margin: 0 1px 1px 0;
+}
+
+#footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border-top: 1px solid blue;
+	font-family: Verdana;
+	font-size: 7pt;
+	background-color: #EEE;
+	text-shadow: 1px 1px 1px #DDD;
+}
+
+#footer a {
+	text-decoration: none;
+	color: blue;
+}
+
+#footer a:hover {
+	text-decoration: none;
+	color: red;
 }
