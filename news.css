@@ -15,8 +15,9 @@ body {
 	border-radius: 3px;
 }
 
-.feed:hover a {
+.feed:hover a, .feed:hover a:visited {
 	opacity: 1 !important;
+	color: blue;
 }
 
 .feed:hover {
