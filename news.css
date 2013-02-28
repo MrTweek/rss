@@ -18,11 +18,15 @@ body {
 .feed:hover a, .feed:hover a:visited {
 	opacity: 1 !important;
 	color: blue;
+	transition: all 400ms;
+	-moz-transition: all 400ms; /* Firefox 4 */
+	-webkit-transition: all 400ms; /* Safari and Chrome */
+	-o-transition: all 400ms; /* Opera */
 }
 
 .feed:hover {
 	border: 1px solid blue;
-	background-color: #EEE;
+	background-color: #FEFEFE;
 }
 
 .feed a {
@@ -106,3 +110,4 @@ body {
 	text-decoration: none;
 	color: red;
 }
+
