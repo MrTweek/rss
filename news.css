@@ -13,15 +13,16 @@ body {
     white-space: nowrap;
     overflow: hidden;
 	border-radius: 3px;
+	
+	transition: all 400ms;
+	-moz-transition: all 400ms; /* Firefox 4 */
+	-webkit-transition: all 400ms; /* Safari and Chrome */
+	-o-transition: all 400ms; /* Opera */
 }
 
 .feed:hover a, .feed:hover a:visited {
 	opacity: 1 !important;
 	color: blue;
-	transition: all 400ms;
-	-moz-transition: all 400ms; /* Firefox 4 */
-	-webkit-transition: all 400ms; /* Safari and Chrome */
-	-o-transition: all 400ms; /* Opera */
 }
 
 .feed:hover {
@@ -40,14 +41,15 @@ body {
     color: blue !important;
 }
 
-.feed a:visited {
-    color: #EEE;
-}
-
 .feed a.title {
     font-weight: bold;
     color: black;
     margin-bottom: 3px;
+	
+	transition: all 400ms;
+	-moz-transition: all 400ms; /* Firefox 4 */
+	-webkit-transition: all 400ms; /* Safari and Chrome */
+	-o-transition: all 400ms; /* Opera */
 }
 
 .feed a.link {
@@ -56,6 +58,9 @@ body {
     width: 100px; 
     padding: 0px;
     margin: 0px;
+}
+.feed a.link:visited {
+	color: #EEE;
 }
 
 .mini {

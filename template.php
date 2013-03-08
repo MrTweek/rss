@@ -28,7 +28,7 @@ $cd = 0;
             onmouseout='nd();'
             >
         <?php if (isset($i['date_timestamp'])): ?>
-            <span class='mini'>[<?= age($i['date_timestamp']) ?>]</span>
+          <span class='mini'>[<?= age($i['date_timestamp']) ?>]</span>
         <?php endif; ?>
             <?= $i['title'] ?></a><br />
         <div id='n<?= $id ?>' class='invisible'>
