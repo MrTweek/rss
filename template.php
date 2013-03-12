@@ -38,9 +38,10 @@ $cd = 0;
     <?php   endforeach; ?>
     </div>
     <?php   endforeach; ?>
-	<?php if (file_exists('custom.html')): ?>
-		<?= file_get_contents('custom.html') ?>
-	<?php endif; ?>
+	<?php
+	if (file_exists('custom.php'))
+		include('custom.php');
+	?>
 		<div id='footer'>&copy;2013 <a href='http://flupps.net/'>Philipp Gruber</a></div>
     </body>
 </html>
