@@ -3,7 +3,7 @@ require 'magpierss/rss_fetch.inc';
 
 $maxlen = 600;
 $maxage = 31*60*24*12;
-$maxcount = 10;
+$maxcount = 30;
 
 function age($t) {
     $age = time()-$t;

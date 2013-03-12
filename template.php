@@ -30,7 +30,7 @@ $cd = 0;
         <?php if (isset($i['date_timestamp'])): ?>
           <span class='mini'>[<?= age($i['date_timestamp']) ?>]</span>
         <?php endif; ?>
-            <?= $i['title'] ?></a><br />
+            <?= $i['title'] ?></a>
         <div id='n<?= $id ?>' class='invisible'>
             <b><?= $i['pubdate']; ?></b><br />
             <?= $i['description']; ?>
