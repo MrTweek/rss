@@ -15,10 +15,10 @@ body {
     overflow: hidden;
 	border-radius: 3px;
 	
-	transition: all 400ms;
-	-moz-transition: all 400ms; /* Firefox 4 */
-	-webkit-transition: all 400ms; /* Safari and Chrome */
-	-o-transition: all 400ms; /* Opera */
+	transition: all 1000ms;
+	-moz-transition: all 1000ms; /* Firefox 4 */
+	-webkit-transition: all 1000ms; /* Safari and Chrome */
+	-o-transition: all 1000ms; /* Opera */
 }
 
 .feed:hover a {
@@ -34,6 +34,11 @@ body {
 .feed a {
     font-size: 7pt;
     text-decoration: none;
+	
+	transition: all 1000ms;
+	-moz-transition: all 1000ms; /* Firefox 4 */
+	-webkit-transition: all 1000ms; /* Safari and Chrome */
+	-o-transition: all 1000ms; /* Opera */
 }
 
 .feed a:hover {
@@ -46,11 +51,6 @@ body {
     font-weight: bold;
     color: black;
     margin-bottom: 3px;
-	
-	transition: all 400ms;
-	-moz-transition: all 400ms; /* Firefox 4 */
-	-webkit-transition: all 400ms; /* Safari and Chrome */
-	-o-transition: all 400ms; /* Opera */
 }
 
 .feed a.link {
