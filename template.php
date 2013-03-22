@@ -27,10 +27,11 @@ $cd = 0;
             onmouseover="overlib($('#n<?= $id ?>').html())"
             onmouseout='nd();'
             >
-        <?php if (isset($i['date_timestamp'])): ?>
-          <span class='mini'>[<?= age($i['date_timestamp']) ?>]</span>
-        <?php endif; ?>
-            <?= $i['title'] ?></a>
+			<?php if (isset($i['date_timestamp'])): ?>
+			  <span class='mini'>[<?= age($i['date_timestamp']) ?>]</span>
+			<?php endif; ?>
+            <?= $i['title'] ?>
+		</a>
         <div id='n<?= $id ?>' class='invisible'>
             <b><?= $i['pubdate']; ?></b><br />
             <?= $i['description']; ?>

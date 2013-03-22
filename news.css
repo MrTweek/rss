@@ -99,9 +99,10 @@ body {
 #footer {
 	position: fixed;
 	bottom: 0;
-	left: 0;
 	right: 0;
 	border-top: 1px solid blue;
+	border-left: 1px solid blue;
+	border-top-left-radius: 5px;
 	font-family: Verdana;
 	font-size: 7pt;
 	background-color: #EEE;
