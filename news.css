@@ -13,7 +13,7 @@ body {
 	height: 120px;
     white-space: nowrap;
     overflow: hidden;
-	border-radius: 3px;
+	border-radius: 5px;
 	
 	transition: all 1000ms;
 	-moz-transition: all 1000ms; /* Firefox 4 */
@@ -49,8 +49,15 @@ body {
 
 .feed a.title {
     font-weight: bold;
-    color: black;
-    margin-bottom: 3px;
+    color: white;
+	margin-bottom: 0px;
+	background-color: #DDF;
+	width: 395px;
+	display: inline-block;
+}
+
+.feed:hover a.title {
+	background-color: #0BF;
 }
 
 .feed a.link {
@@ -92,21 +99,23 @@ body {
 
 .graph {
 	border: 1px solid blue;
+	border-radius: 5px;
 	padding: 1px;
-    margin: 0 1px 1px 0;
+	margin: 0 1px 1px 0;
 }
 
 #footer {
 	position: fixed;
 	bottom: 0;
 	right: 0;
-	border-top: 1px solid blue;
-	border-left: 1px solid blue;
+	border-top: 1px solid #666;
+	border-left: 1px solid #666;
 	border-top-left-radius: 5px;
 	font-family: Verdana;
 	font-size: 7pt;
 	background-color: #EEE;
 	text-shadow: 1px 1px 1px #DDD;
+	padding: 1px 3px 1px 3px;
 }
 
 #footer a {
