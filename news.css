@@ -27,8 +27,7 @@ body {
 }
 
 .feed:hover {
-	border: 1px solid blue;
-	background-color: #0BF;
+	border: 1px solid #0BF;
 }
 
 .feed a {
