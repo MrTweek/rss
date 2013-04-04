@@ -34,7 +34,7 @@ $cd = 0;
 		</a>
         <div id='n<?= $id ?>' class='invisible'>
             <b><?= $i['pubdate']; ?></b><br />
-            <?= $i['description']; ?>
+            <?= clean($i['description']); ?>
         </div>
     <?php   endforeach; ?>
     </div>

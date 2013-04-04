@@ -40,9 +40,10 @@ function ageToOpacity($t) {
 
 function clean($s) {
 //    $s = strip_tags($s);
-    $s = nl2br($s); 
-    $s = htmlentities($s, ENT_COMPAT, 'UTF-8');
-    $s = addslashes($s);
+	$s = preg_replace('!<img [^>]+>!', '', $s);
+//    $s = nl2br($s); 
+//    $s = htmlentities($s, ENT_COMPAT, 'UTF-8');
+//    $s = addslashes($s);
     return $s;
 }
 
