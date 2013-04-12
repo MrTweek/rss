@@ -31,11 +31,11 @@ $cd = 0;
 			  <span class='mini'>[<?= age($i['date_timestamp']) ?>]</span>
 			<?php endif; ?>
             <?= $i['title'] ?>
-		</a>
-        <div id='n<?= $id ?>' class='invisible'>
+        <div id='n<?= $id ?>' class='content'>
             <b><?= $i['pubdate']; ?></b><br />
             <?= clean($i['description']); ?>
         </div>
+		</a>
     <?php   endforeach; ?>
     </div>
     <?php   endforeach; ?>
