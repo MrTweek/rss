@@ -31,7 +31,7 @@ $cd = 0;
 			  <span class='mini'>[<?= age($i['date_timestamp']) ?>]</span>
 			<?php endif; ?>
             <?= $i['title'] ?>
-        <div id='n<?= $id ?>' class='content'>
+        <div id='n<?= $id ?>' class='content invisible'>
             <b><?= $i['pubdate']; ?></b><br />
             <?= clean($i['description']); ?>
         </div>
